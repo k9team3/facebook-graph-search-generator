@@ -13,7 +13,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 </head>
 <body>
 
-    <div id="wrap">
+    <main>
 
         <h1>Facebook Graph Search Generator</h1>
 
@@ -95,7 +95,26 @@ $cookie_data = $FbGSG->get_cookie_data();
                 <a href="#" target="_blank" id="btn-search-common" class="button">Search</a>
             </p>
         </section>
-    </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            Developed by <a href="mailto:tormund.gerhardsen@gmail.com">Tormund Gerhardsen</a>
+            after inspiration from <a target="_blank" href="http://graph.tips/">graph.tips</a>.
+        </p>
+        <p>
+            This project is licenced under
+            <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>
+            and avaliable on
+            <a target="_blank" href="https://github.com/tormundgerhardsen/facebook-graph-search-generator">GitHub</a>.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <img src="img/cc_license.png" />
+        </p>
+    </footer>
 
 
     <!-- SCRIPT -->
@@ -211,8 +230,6 @@ $cookie_data = $FbGSG->get_cookie_data();
         ?>
         generate_url_personal();
         generate_url_common();
-
-
     </script>
 
 </body>
