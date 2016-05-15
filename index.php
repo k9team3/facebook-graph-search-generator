@@ -122,14 +122,12 @@ $cookie_data = $FbGSG->get_cookie_data();
         <p>
             Developed by <a href="mailto:tormund.gerhardsen@gmail.com">Tormund Gerhardsen</a>
             after inspiration from <a target="_blank" href="http://graph.tips/">graph.tips</a>.
-        </p>
-        <p>
+            <br />
             This project is licenced under
             <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>
             and avaliable on
             <a target="_blank" href="https://github.com/tormundgerhardsen/facebook-graph-search-generator">GitHub</a>.
         </p>
-        <p>&nbsp;</p>
         <p>
             <img src="img/cc_license.png" />
         </p>
