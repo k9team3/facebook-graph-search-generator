@@ -19,6 +19,13 @@ switch ($request) {
 
     break;
 
+    // REMOVE FACEBOOK ITEM
+    case 'remove-fb-item':
+
+        echo $FbGSG->remove_from_cookie($var1);
+
+    break;
+
     // GET FACEBOOK USER ID
     case 'get-fb-uid':
 

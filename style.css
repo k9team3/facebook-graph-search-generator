@@ -36,7 +36,7 @@ ul { margin-left: 18px; }
 li { padding-left: 5px; }
 
 #wrap {
-    width: 600px;
+    width: 800px;
     min-height: 200px;
     margin: 0 auto;
     margin-top: 40px;
@@ -63,6 +63,11 @@ select {
     padding: 4px 8px;
 }
 
+.loading {
+    vertical-align: middle;
+    display: none;
+}
+
 .button {
     background: #43609C;
     color: #fff;
@@ -71,9 +76,9 @@ select {
     text-decoration: none;
 }
 
-.loading {
-    vertical-align: middle;
-    display: none;
+.link-remove {
+    color: #43609C;
+    cursor: pointer;
 }
 
 
