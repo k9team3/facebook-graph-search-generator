@@ -27,13 +27,14 @@
 
         <!-- ADD & LIST ITEMS -->
         <section>
-            <h2>2. Add users/places/etc by unique username or UID</h2>
+            <h2>2. Add people by unique username or UID</h2>
             <!-- TODO: Add examples -->
 
             <p>
                 <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name">
-                <input type="text" id="input-username" name="username" placeholder="Username/UID">
+                <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username/UID">
                 <span id="btn-add-item" class="button">Add</span>
+                <img id="loading-add-item" class="loading" src="img/loading.gif" width="24" />
             </p>
 
             <table id="fb-items" cellpadding="0" cellspacing="2">
@@ -72,13 +73,16 @@
         $btn_add_item.click(function() {
 
             var $input_friendlyname = $('#input-friendlyname');
-            var $input_username = $('#input-username');
+            var $input_username_or_uid = $('#input-username-or-uid');
+            var $loading_add_item = $('#loading-add-item');
+            $loading_add_item.show();
+            $btn_add_item.hide();
 
             // Get UID
             $.get('controller.php', {
                 request: 'add-fb-item',
                 var1: $input_friendlyname.val(),
-                var2: $input_username.val()
+                var2: $input_username_or_uid.val()
 
             }).done(function(data) {
                 var result = jQuery.parseJSON(data);
@@ -86,6 +90,12 @@
                 $('#fb-items').append('<tr><td>'+result.friendlyname+'</td><td>'+result.fb_uid+'</td></tr>');
                 // Add to all dropdowns
                 $('.select-item').append('<option value="'+result.fb_uid+'">'+result.friendlyname+'</option>');
+
+                // Reset form
+                $input_friendlyname.val('');
+                $input_username_or_uid.val('');
+                $loading_add_item.hide();
+                $btn_add_item.show();
             });
         });
 

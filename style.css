@@ -82,6 +82,11 @@ select {
     text-decoration: none;
 }
 
+.loading {
+    vertical-align: middle;
+    display: none;
+}
+
 
 /*
  * TABLE
