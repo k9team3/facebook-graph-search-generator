@@ -20,20 +20,28 @@ class FbGSG {
     function add_fb_item ($friendlyname, $fb_username_or_uid) {
 
         // Get UID of this is username
-        if(!is_int($fb_username_or_uid)) {
+        if(!is_numeric($fb_username_or_uid)) {
             $fb_uid = $this->get_fb_uid($fb_username_or_uid);
         } else {
             $fb_uid = $fb_username_or_uid;
         }
 
-        // Add to cookie
-        $this->add_to_cookie($friendlyname, $fb_uid);
+        // So, did we end up with a number here?
+        if(is_numeric($fb_uid)) {
+            // Add to cookie
+            $this->add_to_cookie($friendlyname, $fb_uid);
 
-        // Return as JSON element
-        return array(
-            'friendlyname' => $friendlyname,
-            'fb_uid' => $fb_uid,
-        );
+            // Return as JSON element
+            return array(
+                'friendlyname' => $friendlyname,
+                'fb_uid' => $fb_uid,
+            );
+        } else {
+            return array(
+                'friendlyname' => 'Could not find UID',
+                'fb_uid' => 0,
+            );
+        }
     }
 
 

@@ -60,7 +60,8 @@ $cookie_data = $FbGSG->get_cookie_data();
                 <em>
                 <strong>Example:</strong>
                     Go to a Facebook profile and look in the address bar and find something like: <br />
-                "https://www.facebook.com/JohnDoe". The username is simply "JohnDoe". The friendly name can be whatever you want.
+                    "https://www.facebook.com/JohnDoe". The username is simply "JohnDoe".
+                    The friendly name can be whatever you want.
                 </em>
             </p>
 
