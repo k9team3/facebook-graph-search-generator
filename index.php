@@ -130,6 +130,8 @@ $cookie_data = $FbGSG->get_cookie_data();
             <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>
             and avaliable on
             <a target="_blank" href="https://github.com/tormundgerhardsen/facebook-graph-search-generator">GitHub</a>.
+            <br />
+            Version 1.0 - May 2016
         </p>
         <p>
             <img src="img/cc_license.png" />
