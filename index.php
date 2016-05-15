@@ -87,7 +87,11 @@ $cookie_data = $FbGSG->get_cookie_data();
                     <option value="photos-of">Photos made of</option>
                     <option value="photos-tagged">Photos with tag of</option>
                     <option value="photos-commented">Photos commented by</option>
-                    <option value="photos-commented">Photos uploaded by friends of</option>
+                    <option value="friends/photos-uploaded">Photos uploaded by friends of</option>
+                    <option value="events">Events invitations for</option>
+                    <option value="events-joined">Events joined by</option>
+                    <option value="groups">Groups joined by</option>
+                    <option value="friends">Friends of</option>
                 </select>
                 <select onchange="generate_url_personal();" id="select-personal-who" class="select-item">
                     <option value="0">-- Choose who</option>
