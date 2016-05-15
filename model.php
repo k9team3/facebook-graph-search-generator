@@ -12,6 +12,30 @@ class FbGSG {
 
 
     /**
+     * @param $friendlyname
+     * @param $fb_username_or_uid
+     * @return array
+     */
+    function add_fb_item ($friendlyname, $fb_username_or_uid) {
+
+        // Get UID of this is username
+        if(!is_int($fb_username_or_uid)) {
+            $fb_uid = $this->get_fb_uid($fb_username_or_uid);
+        } else {
+            $fb_uid = $fb_username_or_uid;
+        }
+
+        // TODO: Add to cookie
+
+        // Return as JSON element
+        return array(
+            'friendlyname' => $friendlyname,
+            'fb_uid' => $fb_uid,
+        );
+    }
+
+
+    /**
      * Getting the Facebook User ID form a unique username
      * @param string $fb_username
      * @return int

@@ -1,20 +1,28 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 
 require_once('model.php');
 $FbGSG = new FbGSG();
 
 $request = htmlentities($_GET['request']);
-$value = htmlentities($_GET['value']);
+$var1 = htmlentities($_GET['var1']);
+$var2 = htmlentities($_GET['var2']);
 
 // REQUEST
 switch ($request) {
 
-    // Get Facebook User ID
+    // ADD FACEBOOK ITEM
+    case 'add-fb-item':
+
+        $result = $FbGSG->add_fb_item($var1, $var2);
+        echo json_encode($result);
+
+    break;
+
+    // GET FACEBOOK USER ID
     case 'get-fb-uid':
 
-        $result = $FbGSG->get_fb_uid($value);
-
-        print_r($result);
+        echo $FbGSG->get_fb_uid($var1);
 
     break;
 }

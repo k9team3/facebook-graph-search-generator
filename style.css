@@ -10,10 +10,12 @@
 
 body,
 input,
-textarea {
+textarea,
+select {
     font-size: 13px;
     font-family: arial, verdana, sans-serif;
     color: #333;
+    line-height: 150%;
 }
 
 body {
@@ -21,7 +23,7 @@ body {
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #43609C;
 }
 
@@ -29,12 +31,23 @@ h2 {
     margin-bottom: 10px;
 }
 
+h3 {
+    margin-bottom: 5px;
+}
+
 p {
     margin-bottom: 10px;
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+ul {
+    margin-left: 18px;
+}
+li {
+    padding-left: 5px;
 }
 
 #wrap {
@@ -45,7 +58,7 @@ section {
     border: 1px solid #DFE0E4;
     border-top: 2px solid #43609C;
     border-radius: 4px;
-    padding: 20px;
+    padding: 30px;
     background: #fff;
 }
 
@@ -55,13 +68,43 @@ section {
  * ---------------------------------------------------------------------------------------------------------------------
  */
 
-input {
+input,
+select {
     border: 1px solid #aaa;
-    padding: 5px 8px;
+    padding: 3px 8px;
 }
 
 .button {
     background: #7AA129;
     color: #fff;
     padding: 6px 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/*
+ * TABLE
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+
+table {
+    width: 100%;
+    margin-left: -2px;
+}
+
+th,
+td {
+    padding: 5px 8px;
+}
+
+th {
+    background: #e8e8e8;
+    color: #666;
+    font-weight: normal;
+    text-align: left;
+}
+
+td {
+    background: #F6F6F6;
 }
