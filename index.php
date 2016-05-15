@@ -39,7 +39,7 @@
 
             <table id="fb-items" cellpadding="0" cellspacing="2">
                 <tr>
-                    <th>Frienly name</th>
+                    <th>Friendly name</th>
                     <th>Facebook UID</th>
                 </tr>
             </table>
@@ -49,21 +49,44 @@
         <section>
             <h2>3. Search</h2>
 
-            <h3>Personal</h3>
-            <p>
+            <!-- PERSON-->
+            <h3>Single person</h3>
+            <p class="search-p">
                 <select onchange="generate_url_personal();" id="select-personal-what">
-                    <option value="stories-commented">Posts commented</option>
-                    <option value="photos-liked">Photos liked</option>
+                    <option value="stories-commented">Posts commented by</option>
+                    <option value="photos-liked">Photos liked by</option>
                     <option value="photos-of">Photos made of</option>
-                    <option value="photos-tagged">Photos with tags</option>
-                    <option value="photos-commented">Photos with comments</option>
-                    <option value="photos-commented">Photos uploaded by friends</option>
+                    <option value="photos-tagged">Photos with tag of</option>
+                    <option value="photos-commented">Photos commented by</option>
+                    <option value="photos-commented">Photos uploaded by friends of</option>
                 </select>
-                by/of
                 <select onchange="generate_url_personal();" id="select-personal-who" class="select-item">
                     <option value="0">-- Choose who</option>
                 </select>
                 <a href="#" target="_blank" id="btn-search-personal" class="button">Search</a>
+            </p>
+
+            <!-- COMMON -->
+            <h3>What do they have in common?</h3>
+            <p class="search-p">
+                <select onchange="generate_url_common();" id="select-common-what">
+                    <option value="places-visited">Places visited by</option>
+                    <option value="pages-liked">Pages liked by</option>
+                    <option value="photos-liked">Photos liked by</option>
+                    <option value="photos-commented">Photos commented by</option>
+                    <option value="photos-of">Photos with tag of</option>
+                    <option value="stories-commented">Posts commented by</option>
+                    <option value="events">Common events by</option>
+                    <option value="groups">Common groups by</option>
+                </select>
+                <select onchange="generate_url_common();" id="select-common-who1" class="select-item">
+                    <option value="0">-- Choose who</option>
+                </select>
+                <strong>and</strong>
+                <select onchange="generate_url_common();" id="select-common-who2" class="select-item">
+                    <option value="0">-- Choose who</option>
+                </select>
+                <a href="#" target="_blank" id="btn-search-common" class="button">Search</a>
             </p>
         </section>
     </div>
@@ -71,8 +94,9 @@
 
     <!-- SCRIPT -->
     <script>
-
-        // ADD ITEM
+        /**
+         * Add item to list
+         */
         var $btn_add_item = $('#btn-add-item');
         $btn_add_item.click(function() {
 
@@ -104,16 +128,33 @@
         });
 
 
-        // SEARCH: PERSONAL
+        /**
+         * Search: personal
+         */
         function generate_url_personal() {
 
-            var select_personal_what = $('#select-personal-what').val();
-            var select_personal_who = $('#select-personal-who').val();
+            var what = $('#select-personal-what').val();
+            var who = $('#select-personal-who').val();
 
-            var go_to_url = 'https://www.facebook.com/search/'+select_personal_who+'/'+select_personal_what;
+            var go_to_url = 'https://www.facebook.com/search/'+who+'/'+what;
             $('#btn-search-personal').attr('href', go_to_url);
         }
         generate_url_personal();
+
+
+        /**
+         * Search: common
+         */
+        function generate_url_common() {
+
+            var what = $('#select-common-what').val();
+            var who1 = $('#select-common-who1').val();
+            var who2 = $('#select-common-who2').val();
+
+            var go_to_url = 'https://www.facebook.com/search/'+who1+'/'+what+'/'+who2+'/'+what+'/intersect';
+            $('#btn-search-common').attr('href', go_to_url);
+        }
+        generate_url_common();
     </script>
 
 </body>

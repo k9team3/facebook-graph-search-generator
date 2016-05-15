@@ -1,5 +1,5 @@
 /*
- * DEFAULTS
+ * MISC
  * ---------------------------------------------------------------------------------------------------------------------
  */
 *, *:before, *:after {
@@ -18,37 +18,22 @@ select {
     line-height: 150%;
 }
 
-body {
-    background: #E9EBEE;
-}
+body { background: #E9EBEE; }
 
 h1 {
     margin-bottom: 30px;
     color: #43609C;
 }
+h2 { margin-bottom: 10px; }
+h3 { margin-bottom: 5px; }
 
-h2 {
-    margin-bottom: 10px;
-}
+p { margin-bottom: 10px; }
+p.search-p { margin-bottom: 20px; }
 
-h3 {
-    margin-bottom: 5px;
-}
+section { margin-bottom: 40px; }
 
-p {
-    margin-bottom: 10px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-ul {
-    margin-left: 18px;
-}
-li {
-    padding-left: 5px;
-}
+ul { margin-left: 18px; }
+li { padding-left: 5px; }
 
 #wrap {
     width: 600px;
@@ -106,14 +91,10 @@ th,
 td {
     padding: 5px 8px;
 }
-
 th {
     background: #e8e8e8;
     color: #666;
     font-weight: normal;
     text-align: left;
 }
-
-td {
-    background: #F6F6F6;
-}
+td { background: #F6F6F6; }
