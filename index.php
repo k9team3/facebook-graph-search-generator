@@ -20,24 +20,38 @@ $cookie_data = $FbGSG->get_cookie_data();
         <!-- GETTING STARTED -->
         <section>
             <h2>1. Getting started</h2>
-            <p><strong>Set the lanuage of your Facebook Profile to "English (US)"</strong></p>
             <p>
-                <strong>Why not just type names directly?</strong><br />
-                Well, a lot of stuff can have the same name. Thats why we stick
-                to unique usernames and/or UIDs. Everything on Facebook (users, places, events, etc.) have a
-                Unique ID, hereby just called UIDs. This is simply just a number, but very important to get the
-                search accurate.
+                <strong>What is Facebook Graph Search, and why does this page exist?</strong> <br />
+                Facebook Graph Search is a powerful search enige that lets everyone play around with Facebooks
+                "big data". It only shows you what is already accessible to you (at least that's what Facebook claims),
+                but in a way that has been met by a lot of concerns about privacy. Especially since it can reveal a
+                lot of things you might not think you had access to.
+                This generator is simply just to give you some insight in what it's all about, and some tips on the
+                possibilities.
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Facebook_Graph_Search">Read more on Wikipedia</a>
+            </p>
+            <p>
+                <strong>Set the lanuage of your Facebook to English (US)</strong> <br />
+                At the moment, Facebook Graph Search is only available for United States with English (US) language
+                selected. However, anyone can change to English (US) by going to "Settings" -> "Language" in the upper
+                right corner on Facebook. And search results will still show up from the entire Facebook database...
+            </p>
+            <p>
+                <strong>Why not just type names directly in the search bar?</strong> <br />
+                Well, a lot of stuff can have the same name. Everything on Facebook (people, places, events, etc.)
+                have a unique ID, a so called UID. This is simply just a number, but very important to get the
+                search accurate. And to get the UID for a person, use the persons unique username from the URL.
             </p>
         </section>
 
         <!-- ADD & LIST ITEMS -->
         <section>
-            <h2>2. Add people by unique username or UID</h2>
+            <h2>2. Add people by username</h2>
             <!-- TODO: Add examples -->
 
             <p>
                 <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name">
-                <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username/UID">
+                <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username">
                 <span id="btn-add-item" class="button">Add</span>
                 <img id="loading-add-item" class="loading" src="img/loading.gif" width="24" />
             </p>
