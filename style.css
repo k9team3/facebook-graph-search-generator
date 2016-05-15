@@ -40,7 +40,7 @@ p {
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 ul {
@@ -57,6 +57,7 @@ li {
     margin-top: 40px;
     border: 1px solid #DFE0E4;
     border-top: 2px solid #43609C;
+    border-bottom: 2px solid #DFE0E4;
     border-radius: 4px;
     padding: 30px;
     background: #fff;
@@ -73,9 +74,12 @@ select {
     border: 1px solid #aaa;
     padding: 3px 8px;
 }
+select {
+    padding: 4px 8px;
+}
 
 .button {
-    background: #7AA129;
+    background: #43609C;
     color: #fff;
     padding: 6px 8px;
     cursor: pointer;

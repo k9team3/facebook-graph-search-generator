@@ -52,10 +52,14 @@
             <h3>Personal</h3>
             <p>
                 <select onchange="generate_url_personal();" id="select-personal-what">
-                    <option value="stories-commented">Comments on posts</option>
+                    <option value="stories-commented">Posts commented</option>
                     <option value="photos-liked">Photos liked</option>
+                    <option value="photos-of">Photos made of</option>
+                    <option value="photos-tagged">Photos with tags</option>
+                    <option value="photos-commented">Photos with comments</option>
+                    <option value="photos-commented">Photos uploaded by friends</option>
                 </select>
-                by
+                by/of
                 <select onchange="generate_url_personal();" id="select-personal-who" class="select-item">
                     <option value="0">-- Choose who</option>
                 </select>
