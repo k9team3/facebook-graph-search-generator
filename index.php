@@ -22,13 +22,13 @@ $cookie_data = $FbGSG->get_cookie_data();
             <h2>1. Getting started</h2>
             <p>
                 <strong>What is Facebook Graph Search, and why does this page exist?</strong> <br />
-                Facebook Graph Search is a powerful search enige that lets everyone play around with Facebooks
+                Facebook Graph Search is a powerful search engine that lets everyone play around with Facebooks
                 "big data". It only shows you what is already accessible to you (at least that's what Facebook claims),
-                but in a way that has been met by a lot of concerns about privacy. Especially since it can reveal a
-                lot of things you might not think you had access to.
-                This generator is simply just to give you some insight in what it's all about, and some tips on the
+                but in a strctured and simple way that has been met by a lot of concerns about privacy.
+                Especially since it can reveal things you might not think you had access to.
+                This generator is simply just to give you some insight in what it's all about and some tips on the
                 possibilities.
-                <a target="_blank" href="https://en.wikipedia.org/wiki/Facebook_Graph_Search">Read more on Wikipedia</a>
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Facebook_Graph_Search">Read more on Wikipedia.</a>
             </p>
             <p>
                 <strong>Set the lanuage of your Facebook to English (US)</strong> <br />
@@ -47,13 +47,18 @@ $cookie_data = $FbGSG->get_cookie_data();
         <!-- ADD & LIST ITEMS -->
         <section>
             <h2>2. Add people by username</h2>
-            <!-- TODO: Add examples -->
-
             <p>
-                <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name">
                 <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username">
+                <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name">
                 <span id="btn-add-item" class="button">Add</span>
                 <img id="loading-add-item" class="loading" src="img/loading.gif" width="24" />
+            </p>
+            <p class="example">
+                <em>
+                <strong>Example:</strong>
+                    Go to a Facebook profile and look in the address bar and find something like: <br />
+                "https://www.facebook.com/JohnDoe". The username is simply "JohnDoe". The friendly name can be whatever you want.
+                </em>
             </p>
 
             <table id="fb-items" cellpadding="0" cellspacing="2">
@@ -71,7 +76,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             <!-- PERSON-->
             <h3>Single person</h3>
-            <p class="search-p">
+            <p class="search">
                 <select onchange="generate_url_personal();" id="select-personal-what">
                     <option value="stories-commented">Posts commented by</option>
                     <option value="photos-liked">Photos liked by</option>
@@ -88,7 +93,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             <!-- COMMON -->
             <h3>What do they have in common?</h3>
-            <p class="search-p">
+            <p class="search">
                 <select onchange="generate_url_common();" id="select-common-what">
                     <option value="places-visited">Places visited by</option>
                     <option value="pages-liked">Pages liked by</option>
