@@ -7,7 +7,10 @@ $cookie_data = $FbGSG->get_cookie_data();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Facebook Graph Search Generator</title>
+
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 </head>
@@ -47,7 +50,7 @@ $cookie_data = $FbGSG->get_cookie_data();
         <!-- ADD & LIST ITEMS -->
         <section>
             <h2>2. Add people by username</h2>
-            <p>
+            <p class="input-wrap">
                 <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username">
                 <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name">
                 <span id="btn-add-item" class="button">Add</span>
@@ -76,7 +79,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             <!-- PERSON-->
             <h3>Single person</h3>
-            <p class="search">
+            <p class="search input-wrap">
                 <select onchange="generate_url_personal();" id="select-personal-what">
                     <option value="stories-commented">Posts commented by</option>
                     <option value="photos-liked">Photos liked by</option>
@@ -93,7 +96,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             <!-- COMMON -->
             <h3>What do they have in common?</h3>
-            <p class="search">
+            <p class="search input-wrap">
                 <select onchange="generate_url_common();" id="select-common-what">
                     <option value="places-visited">Places visited by</option>
                     <option value="pages-liked">Pages liked by</option>
