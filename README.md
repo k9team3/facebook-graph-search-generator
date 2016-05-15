@@ -15,5 +15,10 @@ Well, a lot of stuff can have the same name. Everything on Facebook (people, pla
 
 ## Versions
 
+### v1.0.1 - 16. May 2016
+* Small bugfix
+* Add link to working demo in README
+* Add more options for single person search
+
 ### v1.0 - 16. May 2016
 * Initial release. Full working version
