@@ -165,7 +165,7 @@ $cookie_data = $FbGSG->get_cookie_data();
             and avaliable on
             <a target="_blank" href="https://github.com/tormundgerhardsen/facebook-graph-search-generator">GitHub</a>.
             <br />
-            Version 1.0.1 - May 2016
+            Version 1.1 - May 2016
         </p>
         <p>
             <img src="img/cc_license.png" />
