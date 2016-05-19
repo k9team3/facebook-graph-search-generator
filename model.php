@@ -26,6 +26,11 @@ class FbGSG {
             $fb_uid = $fb_username_or_uid;
         }
 
+        // Friendly name is optional, so use username if not set
+        if(empty($friendlyname)) {
+            $friendlyname = $fb_username_or_uid;
+        }
+
         // So, did we end up with a number here?
         if(is_numeric($fb_uid)) {
             // Add to cookie
@@ -73,7 +78,7 @@ class FbGSG {
         // Get <code> element
         $api_code_elements = $api_dom->getElementsByTagName('code');
         foreach ($api_code_elements as $element) {
-            $api_uid = $element->nodeValue;
+            $api_uid = intval($element->nodeValue);
         }
 
         // Return

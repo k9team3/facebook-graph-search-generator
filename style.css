@@ -101,6 +101,9 @@ select {
     padding: 4px 8px;
 }
 
+#input-username-or-uid {  width: 160px;  }
+#input-friendlyname {  width: 180px;  }
+
 .input-wrap {
     line-height: 300%;
 }

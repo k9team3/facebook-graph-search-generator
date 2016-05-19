@@ -51,8 +51,8 @@ $cookie_data = $FbGSG->get_cookie_data();
         <section>
             <h2>2. Add people by username</h2>
             <p class="input-wrap">
-                <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username">
-                <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name">
+                <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username (required)">
+                <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name (optional)">
                 <span id="btn-add-item" class="button">Add</span>
                 <img id="loading-add-item" class="loading" src="img/loading.gif" width="24" />
             </p>
@@ -67,7 +67,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             <table id="fb-items" cellpadding="0" cellspacing="2">
                 <tr>
-                    <th>Friendly name</th>
+                    <th>Name</th>
                     <th>Facebook UID</th>
                     <th>Action</th>
                 </tr>
