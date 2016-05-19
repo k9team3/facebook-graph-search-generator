@@ -11,7 +11,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
     <title>Facebook Graph Search Generator</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css?v=1.0.2" />
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 </head>
 <body>
@@ -121,6 +121,19 @@ $cookie_data = $FbGSG->get_cookie_data();
                 </select>
                 <a href="#" target="_blank" id="btn-search-common" class="button">Search</a>
             </p>
+
+            <!-- ALL POSTINGS -->
+            <h3>All wall postings</h3>
+            <p>
+                Search all wall postings for
+                " <input onkeyup="generate_url_postings();" type="text" id="input-postings-what" />"
+                made by or with
+                <select onchange="generate_url_postings();" id="select-postings-who" class="select-item">
+                    <option value="0">everyone</option>
+                </select>
+                <a href="#" target="_blank" id="btn-search-postings" class="button">Search</a>
+            </p>
+
         </section>
     </main>
 
@@ -240,6 +253,24 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             var go_to_url = 'https://www.facebook.com/search/'+who1+'/'+what+'/'+who2+'/'+what+'/intersect';
             $('#btn-search-common').attr('href', go_to_url);
+        }
+
+
+        /**
+         * Search: postings
+         */
+        function generate_url_postings() {
+
+            var what = $('#input-postings-what').val();
+            var go_to_url = 'https://www.facebook.com/search/str/'+what+'/stories-keyword/';
+
+            // everyone or spesific person?
+            var who = $('#select-postings-who').val();
+            if(who != '0') {
+                go_to_url += who+'/stories/intersect';
+            }
+
+            $('#btn-search-postings').attr('href', go_to_url);
         }
 
 
