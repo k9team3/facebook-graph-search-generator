@@ -82,16 +82,31 @@ $cookie_data = $FbGSG->get_cookie_data();
             <h3>Single person</h3>
             <p class="search input-wrap">
                 <select onchange="generate_url_personal();" id="select-personal-what">
+                    <option value="stories">Posts with</option>
+                    <option value="stories-by">Posts by</option>
                     <option value="stories-commented">Posts commented by</option>
+                    <option value="stories-tagged">Posts with tag of</option>
                     <option value="photos-liked">Photos liked by</option>
                     <option value="photos-of">Photos made of</option>
                     <option value="photos-tagged">Photos with tag of</option>
                     <option value="photos-commented">Photos commented by</option>
-                    <option value="friends/photos-uploaded">Photos uploaded by friends of</option>
                     <option value="events">Events invitations for</option>
                     <option value="events-joined">Events joined by</option>
                     <option value="groups">Groups joined by</option>
+                    <option value="places-liked">Places liked by</option>
+                    <option value="places-visited">Places visited by</option>
+                    <option value="pages-liked">Pages liked by</option>
+                    <option value="apps-used">Apps used by</option>
+                    <option value="videos">Videos with</option>
+                    <option value="videos-by">Videos by</option>
+                    <option value="videos-liked">Videos liked by</option>
+                    <option value="videos-commented">Videos commented by</option>
                     <option value="friends">Friends of</option>
+                    <option value="relatives">Relatives of</option>
+                </select>
+                <select onchange="generate_url_personal();" id="select-personal-with-who">
+                    <option value="0">(optional)</option>
+                    <option value="friends/">friends of</option>
                 </select>
                 <select onchange="generate_url_personal();" id="select-personal-who" class="select-item">
                     <option value="0">-- Choose who</option>
@@ -111,6 +126,7 @@ $cookie_data = $FbGSG->get_cookie_data();
                     <option value="stories-commented">Posts commented by</option>
                     <option value="events">Common events among</option>
                     <option value="groups">Common groups among</option>
+                    <option value="apps-used">Apps used by</option>
                 </select>
                 <select onchange="generate_url_common();" id="select-common-who1" class="select-item">
                     <option value="0">-- Choose who</option>
@@ -236,8 +252,15 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             var what = $('#select-personal-what').val();
             var who = $('#select-personal-who').val();
+            var optional = '';
 
-            var go_to_url = 'https://www.facebook.com/search/'+who+'/'+what;
+            // Add optional?
+            var with_who = $('#select-personal-with-who').val();
+            if(with_who != '0') {
+                optional = with_who;
+            }
+
+            var go_to_url = 'https://www.facebook.com/search/'+who+'/'+optional+what;
             $('#btn-search-personal').attr('href', go_to_url);
         }
 
@@ -264,7 +287,7 @@ $cookie_data = $FbGSG->get_cookie_data();
             var what = $('#input-postings-what').val();
             var go_to_url = 'https://www.facebook.com/search/str/'+what+'/stories-keyword/';
 
-            // everyone or spesific person?
+            // Everyone or spesific person?
             var who = $('#select-postings-who').val();
             if(who != '0') {
                 go_to_url += who+'/stories/intersect';
