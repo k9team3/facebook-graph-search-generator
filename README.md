@@ -15,6 +15,11 @@ Well, a lot of stuff can have the same name. Everything on Facebook (people, pla
 
 ## Versions
 
+### v1.1 - 19. May 2016
+* FEATURE: Add a lot of new search options.
+* MINOR: Friendly name is now optional. If friendly name is empty, username is display in list.
+* BUGFIX: Coverting UIDs from API to strings, fixing bug with items that couldt be deletes due to lack of leading zero.
+
 ### v1.0.1 - 16. May 2016
 * Small bugfix
 * Add link to working demo in README

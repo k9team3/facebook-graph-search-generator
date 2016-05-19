@@ -11,7 +11,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
     <title>Facebook Graph Search Generator</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css?v=1.0.2" />
+    <link rel="stylesheet" type="text/css" href="style.css?v=1.1" />
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 </head>
 <body>
