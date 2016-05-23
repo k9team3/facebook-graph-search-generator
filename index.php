@@ -11,7 +11,7 @@ $cookie_data = $FbGSG->get_cookie_data();
 
     <title>Facebook Graph Search Generator</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css?v=1.1" />
+    <link rel="stylesheet" type="text/css" href="style.css?v=1.2" />
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 </head>
 <body>
@@ -58,7 +58,7 @@ $cookie_data = $FbGSG->get_cookie_data();
             </p>
             <p class="example">
                 <em>
-                <strong>Example:</strong>
+                    <strong>Example:</strong>
                     Go to a Facebook profile and look in the address bar and find something like: <br />
                     "https://www.facebook.com/JohnDoe". The username is simply "JohnDoe".
                     The friendly name can be whatever you want.
@@ -79,96 +79,136 @@ $cookie_data = $FbGSG->get_cookie_data();
             <h2>3. Search</h2>
 
             <!-- PERSON-->
-            <h3>Single person</h3>
-            <p class="search input-wrap">
-                <select onchange="generate_url_personal();" id="select-personal-what">
-                    <option value="stories">Posts with</option>
-                    <option value="stories-by">Posts by</option>
-                    <option value="stories-commented">Posts commented by</option>
-                    <option value="stories-tagged">Posts with tag of</option>
-                    <option value="photos-liked">Photos liked by</option>
-                    <option value="photos-of">Photos made of</option>
-                    <option value="photos-tagged">Photos with tag of</option>
-                    <option value="photos-commented">Photos commented by</option>
-                    <option value="events">Events invitations for</option>
-                    <option value="events-joined">Events joined by</option>
-                    <option value="groups">Groups joined by</option>
-                    <option value="places-liked">Places liked by</option>
-                    <option value="places-visited">Places visited by</option>
-                    <option value="places-visited/1436055710025360/places/intersect">Restaurants visited by</option>
-                    <option value="places-visited/856947674344242/places/intersect">Bars visited by</option>
-                    <option value="places-visited/1585092751741608/places/intersect">Cafes visited by</option>
-                    <option value="places-visited/1588881098065695/places/intersect">Nightclubs visited by</option>
-                    <option value="places-visited/1631302203768899/places/intersect">Shopping places visited by</option>
-                    <option value="places-visited/739776352805342/places/intersect">Hotels visited by</option>
-                    <option value="places-visited/440293872820865/places/intersect">Landmarks visited by</option>
-                    <option value="places-visited/197817313562497/places/intersect">Museums visited by</option>
-                    <option value="pages-liked">Pages liked by</option>
-                    <option value="apps-used">Apps used by</option>
-                    <option value="videos">Videos with</option>
-                    <option value="videos-by">Videos by</option>
-                    <option value="videos-liked">Videos liked by</option>
-                    <option value="videos-commented">Videos commented by</option>
-                    <option value="friends">Friends of</option>
-                    <option value="relatives">Relatives of</option>
-                </select>
-                <select onchange="generate_url_personal();" id="select-personal-with-who">
-                    <option value="0">(optional)</option>
-                    <option value="friends/">friends of</option>
-                </select>
-                <select onchange="generate_url_personal();" id="select-personal-who" class="select-item">
-                    <option value="0">-- Choose who</option>
-                </select>
-                <a href="#" target="_blank" id="btn-search-personal" class="button">Search</a>
-            </p>
+            <div class="search-type">
+                <h3>Single person</h3>
+                <p class="input-wrap">
+                    <select onchange="generate_url_personal();" id="select-personal-what">
+                        <option value="stories">Posts with</option>
+                        <option value="stories-by">Posts by</option>
+                        <option value="stories-commented">Posts commented by</option>
+                        <option value="stories-tagged">Posts tagged with</option>
+                        <option value="photos-liked">Photos liked by</option>
+                        <option value="photos-of">Photos made of</option>
+                        <option value="photos-tagged">Photos tagged with</option>
+                        <option value="photos-commented">Photos commented by</option>
+                        <option value="events">Events invitations for</option>
+                        <option value="events-joined">Events joined by</option>
+                        <option value="groups">Groups joined by</option>
+                        <option value="places-liked">Places liked by</option>
+                        <option value="places-visited">Places visited by</option>
+                        <option value="places-visited/1436055710025360/places/intersect">Restaurants visited by</option>
+                        <option value="places-visited/856947674344242/places/intersect">Bars visited by</option>
+                        <option value="places-visited/1585092751741608/places/intersect">Cafes visited by</option>
+                        <option value="places-visited/1588881098065695/places/intersect">Nightclubs visited by</option>
+                        <option value="places-visited/1631302203768899/places/intersect">Shopping places visited by</option>
+                        <option value="places-visited/739776352805342/places/intersect">Hotels visited by</option>
+                        <option value="places-visited/440293872820865/places/intersect">Landmarks visited by</option>
+                        <option value="places-visited/197817313562497/places/intersect">Museums visited by</option>
+                        <option value="pages-liked">Pages liked by</option>
+                        <option value="apps-used">Apps used by</option>
+                        <option value="videos">Videos with</option>
+                        <option value="videos-by">Videos by</option>
+                        <option value="videos-liked">Videos liked by</option>
+                        <option value="videos-commented">Videos commented by</option>
+                        <option value="friends">Friends of</option>
+                        <option value="relatives">Relatives of</option>
+                    </select>
+                    <select onchange="generate_url_personal();" id="select-personal-with-who">
+                        <option value="0">(optional)</option>
+                        <option value="friends/">friends of</option>
+                    </select>
+                    <select onchange="generate_url_personal();" id="select-personal-who" class="select-item">
+                        <option value="0">-- Choose who</option>
+                    </select>
+                    <a href="#" target="_blank" id="btn-search-personal" class="button">Search</a>
+                </p>
+                <p class="example">
+                    <em>
+                        <strong>Example:</strong>
+                        <a target="_blank" href="https://www.facebook.com/search/4/photos-tagged">
+                            Photos tagged with <u>Mark Zuckerberg</u>
+                        </a>
+                    </em>
+                </p>
+            </div>
 
             <!-- COMMON -->
-            <h3>What do they have in common?</h3>
-            <p class="search input-wrap">
-                <select onchange="generate_url_common();" id="select-common-what">
-                    <option value="places-visited">Places visited by</option>
-                    <option value="pages-liked">Pages liked by</option>
-                    <option value="photos-liked">Photos liked by</option>
-                    <option value="photos-commented">Photos commented by</option>
-                    <option value="photos-of">Photos with tag of</option>
-                    <option value="stories-commented">Posts commented by</option>
-                    <option value="events">Common events among</option>
-                    <option value="groups">Common groups among</option>
-                    <option value="apps-used">Apps used by</option>
-                </select>
-                <select onchange="generate_url_common();" id="select-common-who1" class="select-item">
-                    <option value="0">-- Choose who</option>
-                </select>
-                <strong>and</strong>
-                <select onchange="generate_url_common();" id="select-common-who2" class="select-item">
-                    <option value="0">-- Choose who</option>
-                </select>
-                <a href="#" target="_blank" id="btn-search-common" class="button">Search</a>
-            </p>
+            <div class="search-type">
+                <h3>What do they have in common?</h3>
+                <p class="input-wrap">
+                    <select onchange="generate_url_common();" id="select-common-what">
+                        <option value="places-visited">Places visited by</option>
+                        <option value="pages-liked">Pages liked by</option>
+                        <option value="photos-liked">Photos liked by</option>
+                        <option value="photos-commented">Photos commented by</option>
+                        <option value="photos-of">Photos tagged with</option>
+                        <option value="stories-commented">Posts commented by</option>
+                        <option value="events">Common events among</option>
+                        <option value="groups">Common groups among</option>
+                        <option value="apps-used">Apps used by</option>
+                    </select>
+                    <select onchange="generate_url_common();" id="select-common-who1" class="select-item">
+                        <option value="0">-- Choose who</option>
+                    </select>
+                    <strong>and</strong>
+                    <select onchange="generate_url_common();" id="select-common-who2" class="select-item">
+                        <option value="0">-- Choose who</option>
+                    </select>
+                    <a href="#" target="_blank" id="btn-search-common" class="button">Search</a>
+                </p>
+                <p class="example">
+                    <em>
+                        <strong>Example:</strong>
+                        <a target="_blank" href="https://www.facebook.com/search/5/places-visited/4/places-visited/intersect/">
+                            Places visited by <u>Mark Zuckerberg</u> and <u>Chris Hughes</u>
+                        </a>
+                    </em>
+                </p>
+            </div>
 
             <!-- ALL POSTINGS -->
-            <h3>All wall postings</h3>
-            <p class="search input-wrap">
-                Search all wall postings for
-                " <input onkeyup="generate_url_postings();" type="text" id="input-postings-what" />"
-                made by or with
-                <select onchange="generate_url_postings();" id="select-postings-who" class="select-item">
-                    <option value="0">anyone</option>
-                </select>
-                <a href="#" target="_blank" id="btn-search-postings" class="button">Search</a>
-            </p>
+            <div class="search-type">
+                <h3>All wall postings</h3>
+                <p class="input-wrap">
+                    Search all wall postings for
+                    " <input onkeyup="generate_url_postings();" type="text" id="input-postings-what" />"
+                    made by or with
+                    <select onchange="generate_url_postings();" id="select-postings-who" class="select-item">
+                        <option value="0">anyone</option>
+                    </select>
+                    <a href="#" target="_blank" id="btn-search-postings" class="button">Search</a>
+                </p>
+                <p class="example">
+                    <em>
+                        <strong>Example:</strong>
+                        <a target="_blank" href="https://www.facebook.com/search/str/A%20walk%20on%20the%20beach/stories-keyword/">
+                            Search all wall postings for <u>"A walk on the beach"</u>
+                        </a>
+                    </em>
+                </p>
+            </div>
 
             <!-- LOCATION -->
-            <h3>Who went where?</h3>
-            <p class="search input-wrap">
-                Which people who live in
-                <input onkeyup="generate_url_location();" type="text" id="input-location-from"
-                       placeholder="name of country or city"/>
-                visited&nbsp;
-                <input onkeyup="generate_url_location();" type="text" id="input-location-visited"
-                       placeholder="name of country or city"/>
-                <a href="#" target="_blank" id="btn-search-location" class="button">Search</a>
-            </p>
+            <div class="search-type">
+                <h3>Who went where?</h3>
+                <p class="input-wrap">
+                    Which people who live in
+                    <input onkeyup="generate_url_location();" type="text" id="input-location-from"
+                           placeholder="name of country or city"/>
+                    visited&nbsp;
+                    <input onkeyup="generate_url_location();" type="text" id="input-location-visited"
+                           placeholder="name of country or city"/>
+                    <a href="#" target="_blank" id="btn-search-location" class="button">Search</a>
+                </p>
+                <p class="example">
+                    <em>
+                        <strong>Example:</strong>
+                        <a target="_blank" href="https://www.facebook.com/search/str/bergen/pages-named/residents/present/intersect/str/Syria/pages-named/visitors/intersect">
+                            Which people who live in <u>Bergen</u> visited <u>Syria</u>?
+                        </a>
+                    </em>
+                </p>
+            </div>
 
         </section>
     </main>
