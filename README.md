@@ -15,6 +15,11 @@ Well, a lot of stuff can have the same name. Everything on Facebook (people, pla
 
 ## Versions
 
+### v1.2 - 23. May 2016
+* FEATURE: Add new search option: Who went where?
+* MINOR: Add examples.
+* MINOR: Tidied up the GUI search section a bit, and corrected som spelling.
+
 ### v1.1 - 19. May 2016
 * FEATURE: Add a lot of new search options.
 * MINOR: Friendly name is now optional. If friendly name is empty, username is display in list.
