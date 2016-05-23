@@ -95,6 +95,14 @@ $cookie_data = $FbGSG->get_cookie_data();
                     <option value="groups">Groups joined by</option>
                     <option value="places-liked">Places liked by</option>
                     <option value="places-visited">Places visited by</option>
+                    <option value="places-visited/1436055710025360/places/intersect">Restaurants visited by</option>
+                    <option value="places-visited/856947674344242/places/intersect">Bars visited by</option>
+                    <option value="places-visited/1585092751741608/places/intersect">Cafes visited by</option>
+                    <option value="places-visited/1588881098065695/places/intersect">Nightclubs visited by</option>
+                    <option value="places-visited/1631302203768899/places/intersect">Shopping places visited by</option>
+                    <option value="places-visited/739776352805342/places/intersect">Hotels visited by</option>
+                    <option value="places-visited/440293872820865/places/intersect">Landmarks visited by</option>
+                    <option value="places-visited/197817313562497/places/intersect">Museums visited by</option>
                     <option value="pages-liked">Pages liked by</option>
                     <option value="apps-used">Apps used by</option>
                     <option value="videos">Videos with</option>
@@ -140,14 +148,26 @@ $cookie_data = $FbGSG->get_cookie_data();
 
             <!-- ALL POSTINGS -->
             <h3>All wall postings</h3>
-            <p>
+            <p class="search input-wrap">
                 Search all wall postings for
                 " <input onkeyup="generate_url_postings();" type="text" id="input-postings-what" />"
                 made by or with
                 <select onchange="generate_url_postings();" id="select-postings-who" class="select-item">
-                    <option value="0">everyone</option>
+                    <option value="0">anyone</option>
                 </select>
                 <a href="#" target="_blank" id="btn-search-postings" class="button">Search</a>
+            </p>
+
+            <!-- LOCATION -->
+            <h3>Who went where?</h3>
+            <p class="search input-wrap">
+                Which people who live in
+                <input onkeyup="generate_url_location();" type="text" id="input-location-from"
+                       placeholder="name of country or city"/>
+                visited&nbsp;
+                <input onkeyup="generate_url_location();" type="text" id="input-location-visited"
+                       placeholder="name of country or city"/>
+                <a href="#" target="_blank" id="btn-search-location" class="button">Search</a>
             </p>
 
         </section>
@@ -294,6 +314,22 @@ $cookie_data = $FbGSG->get_cookie_data();
             }
 
             $('#btn-search-postings').attr('href', go_to_url);
+        }
+
+
+        /**
+         * Search: location
+         */
+        function generate_url_location() {
+
+            var from = $('#input-location-from').val();
+            var visited = $('#input-location-visited').val();
+            var go_to_url =
+                'https://www.facebook.com/search/str/'+from+
+                '/pages-named/residents/present/intersect/str/'+visited+
+                '/pages-named/visitors/intersect';
+
+            $('#btn-search-location').attr('href', go_to_url);
         }
 
 
