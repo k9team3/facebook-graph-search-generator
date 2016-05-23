@@ -37,7 +37,7 @@ $cookie_data = $FbGSG->get_cookie_data();
                 <strong>Set the lanuage of your Facebook to English (US)</strong> <br />
                 At the moment, Facebook Graph Search is only available for United States with English (US) language
                 selected. However, anyone can change to English (US) by going to "Settings" -> "Language" in the upper
-                right corner on Facebook. And search results will still show up from the entire Facebook database...
+                right corner on Facebook. And search results will still show up from the entire Facebook database!
             </p>
             <p>
                 <strong>Why not just type names directly in the search bar?</strong> <br />
@@ -52,7 +52,7 @@ $cookie_data = $FbGSG->get_cookie_data();
             <h2>2. Add people by username</h2>
             <p class="input-wrap">
                 <input type="text" id="input-username-or-uid" name="username-or-uid" placeholder="Username (required)">
-                <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Friendly name (optional)">
+                <input type="text" id="input-friendlyname" name="friendlyname" placeholder="Real name (optional)">
                 <span id="btn-add-item" class="button">Add</span>
                 <img id="loading-add-item" class="loading" src="img/loading.gif" width="24" />
             </p>
